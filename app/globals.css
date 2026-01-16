@@ -1,0 +1,615 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ---------- GLOBAL FONTS ---------- */
+
+html,
+body {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  scroll-padding-top: 100px;
+  /* Offset for fixed header */
+  scroll-behavior: smooth;
+}
+
+/* ---------- GOOGLE SANS (LOGO ONLY) ---------- */
+@font-face {
+  font-family: "GoogleSans";
+  src: url("/fonts/google-sans/GoogleSans-Bold.woff2") format("woff2"),
+    url("/fonts/google-sans/GoogleSans-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "Sentient";
+  src: url("/Sentient-Extralight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sentient";
+  src: url("/Sentient-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ---------- THEME TOKENS (BLACK + YELLOW) ---------- */
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #1a1a1a;
+  --card-foreground: #ffffff;
+  --popover: #1a1a1a;
+  --popover-foreground: #ffffff;
+  --primary: #ffc700;
+  --primary-foreground: #000000;
+  --secondary: #f5f5f5;
+  --secondary-foreground: #1a1a1a;
+  --muted: #f5f5f5;
+  --muted-foreground: #666666;
+  --accent: #f5f5f5;
+  --accent-foreground: #1a1a1a;
+  --destructive: #ff4444;
+  --destructive-foreground: #ffffff;
+  --border: #424242;
+  --input: #eeeeee;
+  --ring: #b3b3b3;
+  --chart-1: #ff6b6b;
+  --chart-2: #4ecdc4;
+  --chart-3: #45b7d1;
+  --chart-4: #ffa502;
+  --chart-5: #c7b825;
+  --radius: 0.625rem;
+  --sidebar: #fafafa;
+  --sidebar-foreground: #1a1a1a;
+  --sidebar-primary: #1a1a1a;
+  --sidebar-primary-foreground: #fafafa;
+  --sidebar-accent: #f5f5f5;
+  --sidebar-accent-foreground: #1a1a1a;
+  --sidebar-border: #eeeeee;
+  --sidebar-ring: #b3b3b3;
+}
+
+.dark {
+  --background: #1a1a1a;
+  --foreground: #fafafa;
+  --card: #1a1a1a;
+  --card-foreground: #fafafa;
+  --popover: #1a1a1a;
+  --popover-foreground: #fafafa;
+  --primary: #ffc700;
+  --primary-foreground: #000000;
+  --secondary: #2d2d2d;
+  --secondary-foreground: #fafafa;
+  --muted: #2d2d2d;
+  --muted-foreground: #b3b3b3;
+  --accent: #2d2d2d;
+  --accent-foreground: #fafafa;
+  --destructive: #ff6b6b;
+  --destructive-foreground: #fafafa;
+  --border: #2d2d2d;
+  --input: #2d2d2d;
+  --ring: #666666;
+  --chart-1: #ff6b6b;
+  --chart-2: #4ecdc4;
+  --chart-3: #c7b825;
+  --chart-4: #ffa502;
+  --chart-5: #ff6b6b;
+  --sidebar: #1a1a1a;
+  --sidebar-foreground: #fafafa;
+  --sidebar-primary: #ff6b6b;
+  --sidebar-primary-foreground: #fafafa;
+  --sidebar-accent: #2d2d2d;
+  --sidebar-accent-foreground: #fafafa;
+  --sidebar-border: #2d2d2d;
+  --sidebar-ring: #666666;
+}
+
+/* ---------- TAILWIND THEME BINDINGS ---------- */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* container utility (optional but nice) */
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+
+  @media (width >=768px) {
+    padding-inline: 2rem;
+  }
+
+  @media (width >=1280px) {
+    padding-inline: 3rem;
+  }
+}
+
+/* ---------- BASE LAYER ---------- */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* ---------- REMOVE GLOBAL WEBGL BACKGROUND (IMPORTANT) ----------
+   DO NOT add any #webgl fixed / full-screen styles here.
+   The Hero component now handles its own background.
+*/
+
+/* ---------- LOGO MARQUEE ---------- */
+
+@keyframes scroll-companies {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.company-marquee {
+  display: inline-flex;
+  animation: scroll-companies 26s linear infinite;
+}
+
+.company-logo-img {
+  opacity: 1 !important;
+  filter: brightness(4.9) contrast(2.9) saturate(1.1);
+  mix-blend-mode: normal !important;
+}
+
+/* ---------- ORBIT ANIMATIONS (if used) ---------- */
+
+@keyframes orbit-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.orbit-spin {
+  animation: orbit-spin 28s linear infinite;
+}
+
+.orbit-counter {
+  animation: orbit-spin 28s linear infinite reverse;
+}
+
+/* ---------- PREMIUM HEADING STYLE ---------- */
+.text-premium-heading {
+  font-family: var(--font-instrument), serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 5rem;
+  /* 80px */
+  line-height: 6rem;
+  /* 96px */
+  color: #E4E9F2;
+  /* rgb(228, 233, 242) */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .text-premium-heading {
+    font-size: 2.5rem; /* Reduced from 3rem */
+    line-height: 2.75rem;
+  }
+}
+
+/* ---------- REELS SECTION UTILITIES ---------- */
+
+@layer utilities {
+  @keyframes reels-scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .reels-track {
+    width: max-content;
+    animation: reels-scroll 45s linear infinite;
+  }
+
+  .reel-card {
+    position: relative;
+    width: 260px;
+    aspect-ratio: 9 / 16;
+    border-radius: 1.75rem;
+    overflow: hidden;
+    background: #020617;
+    flex-shrink: 0;
+  }
+
+  .reel-media {
+    position: absolute;
+    inset: 0;
+  }
+
+  .reel-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+        rgba(0, 0, 0, 0.85) 0%,
+        rgba(0, 0, 0, 0.2) 50%,
+        rgba(0, 0, 0, 0) 100%);
+  }
+
+  .reel-content {
+    position: absolute;
+    inset: 0;
+    padding: 1rem 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0.35rem;
+    color: #f9fafb;
+  }
+
+  .reel-pill {
+    position: absolute;
+    top: 0.9rem;
+    left: 1.1rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.18rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid rgba(249, 250, 251, 0.4);
+    background: rgba(15, 23, 42, 0.6);
+  }
+
+  .reel-play {
+    position: absolute;
+    bottom: 1.9rem;
+    right: 1.25rem;
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 999px;
+    border: none;
+    background: radial-gradient(circle at 30% 30%, #fef9c3, #facc15);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 18px 35px rgba(250, 204, 21, 0.4);
+  }
+
+  .reel-play-icon {
+    width: 0;
+    height: 0;
+    border-left: 11px solid #000;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    margin-left: 2px;
+  }
+
+  .reel-duration {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(249, 250, 251, 0.6);
+  }
+
+  .reel-title {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .reel-caption {
+    font-size: 0.8rem;
+    color: rgba(249, 250, 251, 0.75);
+  }
+}
+
+/* For any extra use of reels-scroll */
+@keyframes reels-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-reels {
+  animation: reels-scroll 35s linear infinite;
+}
+
+/* ---------- CTA + CAL.COM EMBED (CLEAN) ---------- */
+
+#book-call {
+  background-image: none !important;
+}
+
+.cta-section {
+  padding: 60px 20px; /* Reduced from 120px */
+  text-align: center;
+  background: #000;
+}
+
+@media (min-width: 768px) {
+  .cta-section {
+    padding: 120px 20px;
+  }
+}
+
+.cta-container {
+  max-width: 900px;
+  margin: 0 auto 40px; /* Reduced from 60px */
+}
+
+@media (min-width: 768px) {
+  .cta-container {
+    margin: 0 auto 60px;
+  }
+}
+
+.cta-pill {
+  display: inline-block;
+  background: #caa549;
+  color: #000;
+  padding: 8px 18px;
+  border-radius: 40px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.cta-heading {
+  font-size: 32px; /* Reduced from 56px default */
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .cta-heading {
+    font-size: 56px;
+  }
+}
+
+.cta-heading span {
+  color: #caa549;
+  text-decoration: underline;
+}
+
+.cta-subtext {
+  font-size: 18px;
+  color: #bdbdbd;
+  line-height: 1.6;
+}
+
+/* Cal embed wrapper – no scrollbar, no extra bg */
+.cal-clean-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 18px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.cal-iframe-clean {
+  width: 100%;
+  height: 720px;
+  border: none;
+  overflow: hidden;
+}
+
+@keyframes border-travel {
+  0% {
+    offset-distance: 0%;
+  }
+
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.glow-border {
+  position: relative;
+  border-radius: 9999px;
+  padding: 1px;
+  background: #1a1a1a;
+}
+
+.glow-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: transparent;
+}
+
+.glow-border::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle,
+      rgba(245, 199, 122, 1) 0%,
+      rgba(245, 199, 122, 0.9) 40%,
+      rgba(245, 199, 122, 0) 70%);
+  filter: blur(6px);
+  border-radius: 50%;
+  offset-path: rect(0% 100% 100% 0% round 9999px);
+  animation: border-travel 4s linear infinite;
+}
+
+.glow-border:hover::after {
+  filter: blur(8px);
+}
+
+.glow-inner {
+  position: relative;
+  z-index: 1;
+  border-radius: inherit;
+  background: radial-gradient(140% 140% at 50% 0%,
+      #1b1b1b 0%,
+      #000000 75%);
+  color: #f5c77a;
+  box-shadow:
+    inset 0 0 0 1px rgba(245, 199, 122, 0.25),
+    0 0 30px rgba(245, 199, 122, 0.15);
+}
+
+.faq-glow-border {
+  position: relative;
+  border-radius: 1.5rem;
+  /* rounded-3xl */
+  padding: 1px;
+  /* Border width */
+  background: transparent;
+  isolation: isolate;
+}
+
+.faq-glow-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* The looping glow runner */
+.faq-glow-border::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  /* Length of the glow tail */
+  height: 2px;
+  /* Thickness of the glow line */
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(245, 199, 122, 0) 20%,
+      rgba(245, 199, 122, 1) 100%);
+  filter: blur(2px);
+  border-radius: 100px;
+
+  /* Use offset-path to follow the border */
+  offset-path: rect(0% 100% 100% 0% round 1.5rem);
+  animation: border-travel 3s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Only show glow when active class is present (managed by reactant state) */
+.faq-glow-border.active::after {
+  opacity: 1;
+}
+
+/* Adjust the runner for box shape stability? 
+   Actually, offset-path rect() works great. 
+   We just need to make sure the element being animated (::after) fits the path.
+*/
+
+/* Marquee animation */
+.company-marquee {
+  animation: marquee 38s linear infinite;
+  display: flex;
+  align-items: center;
+  will-change: transform;
+}
+
+/* LOGO NORMALIZATION (core solution) */
+.company-logo-img {
+  height: 32px; /* Smaller on mobile */
+  width: auto;
+  min-width: 80px; /* Prevent crushing */
+  object-fit: contain;
+  opacity: 0.55;
+  filter: grayscale(100%) brightness(1.35) contrast(0.9);
+  transition: opacity 0.35s ease, filter 0.35s ease, transform 0.35s ease;
+}
+
+@media (min-width: 768px) {
+  .company-logo-img {
+    height: 48px;
+    width: 160px; /* Restore fixed width for desktop balance if desired, or keep auto */
+    width: auto; /* Actually auto is better generally, but let's stick to the previous fixed logic if needed. Let's try auto first. */
+    min-width: 120px;
+  }
+}
+
+/* Hover brings logo alive */
+.company-logo-img:hover {
+  opacity: 1;
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.05);
+}
+
+/* Infinite scroll */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
