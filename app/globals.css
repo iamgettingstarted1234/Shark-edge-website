@@ -16,29 +16,14 @@ body {
 /* ---------- GOOGLE SANS (LOGO ONLY) ---------- */
 @font-face {
   font-family: "GoogleSans";
-  src: url("/fonts/google-sans/GoogleSans-Bold.woff2") format("woff2"),
-    url("/fonts/google-sans/GoogleSans-Bold.woff") format("woff");
+  src: url("/fonts/gsans-bold.woff2") format("woff2"),
+    url("/fonts/gsans-bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 
-@font-face {
-  font-family: "Sentient";
-  src: url("/Sentient-Extralight.woff") format("woff");
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Sentient";
-  src: url("/Sentient-LightItalic.woff") format("woff");
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
 
 /* ---------- THEME TOKENS (BLACK + YELLOW) ---------- */
 

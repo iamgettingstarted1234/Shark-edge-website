@@ -4,6 +4,8 @@ import { Inter, Manrope } from "next/font/google"
 import localFont from "next/font/local"
 import Script from "next/script"
 import "./globals.css"
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Header } from "@/components/common/header"
 import GradualBlur from "@/components/common/gradual-blur"
 import { FooterCTA } from "@/components/sections/footer-cta"
@@ -22,14 +24,14 @@ const manrope = Manrope({
 
 /* instrument serif italic */
 const instrumentSerifItalic = localFont({
-  src: "../public/fonts/InstrumentSerif-Italic.ttf",
+  src: "../public/fonts/instrument-italic.ttf",
   variable: "--font-instrument-italic",
   style: 'italic',
 })
 
 /* Inter local variable font */
 const interLocal = localFont({
-  src: "../public/fonts/Inter-VariableFont_opsz,wght.ttf",
+  src: "../public/fonts/inter-variable.ttf",
   variable: "--font-inter-local",
 })
 
@@ -263,6 +265,8 @@ export default function RootLayout({
         </main>
         <FooterCTA />
         <GradualBlur direction="bottom" blurLayers={1} maxBlur={1} height="20px" />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
