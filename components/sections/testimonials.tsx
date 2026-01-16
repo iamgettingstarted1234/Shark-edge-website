@@ -165,9 +165,9 @@ export function TestimonialsSection() {
                     <div className="flex-1 flex flex-col justify-center relative">
 
                       <div className="mb-8">
-                        <h4 className="text-3xl md:text-4xl font-bold text-white mb-3">
+                        <h3 className="text-3xl md:text-4xl font-bold text-white mb-3">
                           {t.name}
-                        </h4>
+                        </h3>
                         <span className="text-base text-[#D4AF37] font-medium block">
                           {t.role}
                         </span>
@@ -194,6 +194,7 @@ export function TestimonialsSection() {
             <button
               key={i}
               onClick={() => setActive(i)}
+              aria-label={`Go to testimonial ${i + 1}`}
               className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${i === active
                 ? "w-8 bg-[#D4AF37]"
                 : "w-1.5 bg-white/30 hover:bg-white/50"
@@ -218,6 +219,7 @@ function TestimonialImage({ t }: { t: Testimonial }) {
           src={t.image}
           alt={t.name}
           fill
+          sizes="(max-width: 768px) 100vw, 360px"
           className="object-cover pointer-events-none rounded-2xl"
           style={{
             objectPosition: t.id === 1 ? "center 40%" : t.id === 2 ? "center 20%" : "center center"

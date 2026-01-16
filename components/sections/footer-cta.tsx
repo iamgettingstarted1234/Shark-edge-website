@@ -84,6 +84,7 @@ export function FooterCTA() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`Follow us on ${social.icon === FaInstagram ? 'Instagram' : 'LinkedIn'}`}
                 className={`${social.className} transition-colors duration-300`}
               >
                 <social.icon />
