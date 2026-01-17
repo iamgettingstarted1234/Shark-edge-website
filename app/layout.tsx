@@ -241,6 +241,12 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Preload hero video for faster LCP */}
+        <link rel="preload" href="/background/hero-bg.webm" as="video" type="video/webm" />
+        {/* Preload critical fonts */}
+        <link rel="preload" href="/fonts/inter-variable.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
+      </head>
       <body
         className={`
           ${inter.variable}

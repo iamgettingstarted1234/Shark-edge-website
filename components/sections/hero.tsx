@@ -112,6 +112,8 @@ export function Hero() {
           loop
           muted
           playsInline
+          preload="auto"
+          aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"
           onCanPlay={(e) => {
             // Ensure video plays when ready
