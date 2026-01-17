@@ -195,11 +195,15 @@ export function TestimonialsSection() {
               key={i}
               onClick={() => setActive(i)}
               aria-label={`Go to testimonial ${i + 1}`}
-              className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${i === active
-                ? "w-8 bg-[#D4AF37]"
-                : "w-1.5 bg-white/30 hover:bg-white/50"
-                }`}
-            />
+              className={`relative h-12 flex items-center justify-center cursor-pointer transition-all duration-300 ${i === active ? "w-12" : "w-8"}`}
+            >
+              <span
+                className={`rounded-full transition-all duration-300 ${i === active
+                  ? "w-8 h-1.5 bg-[#D4AF37]"
+                  : "w-1.5 h-1.5 bg-white/30 hover:bg-white/50"
+                  }`}
+              />
+            </button>
           ))}
         </div>
       </div>
