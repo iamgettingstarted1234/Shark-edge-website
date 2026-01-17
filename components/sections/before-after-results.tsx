@@ -70,7 +70,7 @@ const CASE_STUDIES: CaseStudy[] =
       summary:
         "Improved reach and follower velocity through focused short-form content.",
 
-      avatar: "/clients/client-01.webp"
+      avatar: "/clients/idan-nimtso.webp"
     },
 
     {
@@ -94,7 +94,7 @@ const CASE_STUDIES: CaseStudy[] =
       summary:
         "Scaled from mid-size creator to massive reach through viral fitness storytelling and visual-first content.",
 
-      avatar: "/clients/client-02.webp"
+      avatar: "/clients/fraser-moves.webp"
     }
   ]
 

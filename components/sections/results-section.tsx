@@ -97,7 +97,7 @@ type Reel = {
   context: string
   duration: string
   thumbnail: string
-  videoSrc?: string // Added video source
+  videoSrc?: string
   href?: string
 }
 
@@ -109,7 +109,7 @@ const REELS: Reel[] = [
     context: "Positioning you as the go-to expert in your space.",
     duration: "0:49",
     thumbnail:
-      "/thumbnails/Video1.webp",
+      "/thumbnails/video-thumb-01.webp",
     videoSrc: "https://res.cloudinary.com/dlliqtujb/video/upload/v1767768388/Video_1_1_rfqzot.mp4",
   },
   {
@@ -118,7 +118,7 @@ const REELS: Reel[] = [
     context: "Turning your journey into client-magnet episodes.",
     duration: "0:32",
     thumbnail:
-      "/thumbnails/Video2.webp",
+      "/thumbnails/video-thumb-02.webp",
     videoSrc: "https://res.cloudinary.com/dlliqtujb/video/upload/v1767768396/video_2_1_uznxqn.mp4",
   },
   {
@@ -127,7 +127,7 @@ const REELS: Reel[] = [
     context: "Explainers that simplify complex topics.",
     duration: "0:27",
     thumbnail:
-      "/thumbnails/Video3.webp",
+      "/thumbnails/video-thumb-03.webp",
     videoSrc: "https://res.cloudinary.com/dlliqtujb/video/upload/v1767766998/Video_3_nzywyv.mp4",
   },
   {
@@ -136,7 +136,7 @@ const REELS: Reel[] = [
     context: "Showing the real person behind the brand.",
     duration: "0:41",
     thumbnail:
-      "/thumbnails/Video4.webp",
+      "/thumbnails/video-thumb-04.webp",
     videoSrc: "https://res.cloudinary.com/dlliqtujb/video/upload/v1767768400/Video_4_1_csknfc.mp4",
   },
   {
@@ -145,7 +145,7 @@ const REELS: Reel[] = [
     context: "Clear CTAs that move people to book or buy.",
     duration: "0:36",
     thumbnail:
-      "/thumbnails/Video5.webp",
+      "/thumbnails/video-thumb-05.webp",
     videoSrc: "https://res.cloudinary.com/dlliqtujb/video/upload/v1767767011/Video_5_raijsf.mp4",
   },
   {
@@ -154,7 +154,7 @@ const REELS: Reel[] = [
     context: "Clipping your best client wins and key moments.",
     duration: "0:53",
     thumbnail:
-      "/thumbnails/Video6.webp",
+      "/thumbnails/video-thumb-06.webp",
     videoSrc: "https://res.cloudinary.com/dlliqtujb/video/upload/v1767766977/video_6_tablzl.mp4",
   },
   {
@@ -163,7 +163,7 @@ const REELS: Reel[] = [
     context: "Short, sharp tips that boost saves and shares.",
     duration: "0:18",
     thumbnail:
-      "/thumbnails/Video7.webp",
+      "/thumbnails/video-thumb-07.webp",
     videoSrc: "https://res.cloudinary.com/dlliqtujb/video/upload/v1767768455/Video_7_1_aqsexi.mp4",
   },
   {
@@ -172,23 +172,23 @@ const REELS: Reel[] = [
     context: "Documenting how you actually work with clients.",
     duration: "0:44",
     thumbnail:
-      "/thumbnails/Video8.webp",
+      "/thumbnails/video-thumb-08.webp",
     videoSrc: "https://res.cloudinary.com/dlliqtujb/video/upload/v1767767030/Video_8_hgdqct.mp4",
   },
-  // {
-  //   id: 9,
-  //   title: "Viral potential",
-  //   context: "Maximizing reach with trending formats.",
-  //   duration: "0:22",
-  //   thumbnail: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=900&q=80",
-  //   videoSrc: "https://res.cloudinary.com/dlliqtujb/video/upload/v1767766982/video.9_inc6fs.mp4",
-  // },
+  {
+    id: 9,
+    title: "Viral potential",
+    context: "Maximizing reach with trending formats.",
+    duration: "0:22",
+    thumbnail: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=900&q=80",
+    videoSrc: "https://res.cloudinary.com/dlliqtujb/video/upload/v1767766982/video.9_inc6fs.mp4",
+  },
   {
     id: 10,
     title: "Community building",
     context: "Engaging directly with your audience.",
     duration: "0:35",
-    thumbnail: "/thumbnails/Video10.webp",
+    thumbnail: "/thumbnails/video-thumb-10.webp",
     videoSrc: "https://res.cloudinary.com/dlliqtujb/video/upload/v1767766977/video_10_msewkh.mp4",
   },
   {
@@ -196,17 +196,17 @@ const REELS: Reel[] = [
     title: "Strategic highlights",
     context: "Showcasing key milestones.",
     duration: "0:45",
-    thumbnail: "/thumbnails/Video11.webp",
+    thumbnail: "/thumbnails/video-thumb-11.webp",
     videoSrc: "https://res.cloudinary.com/dlliqtujb/video/upload/v1767766981/video_11_ljdgro.mp4",
   },
-  // {
-  //   id: 12,
-  //   title: "Brand essence",
-  //   context: "Visualizing your core values.",
-  //   duration: "0:30",
-  //   thumbnail: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=900&q=80",
-  //   videoSrc: "https://res.cloudinary.com/dlliqtujb/video/upload/v1767766980/video_12_mx7cuk.mp4",
-  // },
+  {
+    id: 12,
+    title: "Brand essence",
+    context: "Visualizing your core values.",
+    duration: "0:30",
+    thumbnail: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=900&q=80",
+    videoSrc: "https://res.cloudinary.com/dlliqtujb/video/upload/v1767766980/video_12_mx7cuk.mp4",
+  },
 
 ]
 

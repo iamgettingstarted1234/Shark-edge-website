@@ -32,14 +32,14 @@ export function Hero() {
   const companyLogos = [
     {
       alt: "Antomolio",
-      src: "/logos/Antimolio-new.png",
+      src: "/logos/antimolio-optimized.webp",
       height: 50,
       width: 130,
       shouldInvert: false,
     },
     {
       alt: "Cleo's Kitchen",
-      src: "/logos/cleos.png",
+      src: "/logos/cleos-optimized.webp",
       height: 40,
       width: 134,
       shouldInvert: true,
@@ -60,14 +60,14 @@ export function Hero() {
     },
     {
       alt: "Home Hulab",
-      src: "/logos/home-hulab.png",
+      src: "/logos/home-hulab-optimized.webp",
       height: 60,
       width: 120,
       shouldInvert: true,
     },
     {
       alt: "HSS",
-      src: "/logos/hss.webp",
+      src: "/logos/hss-opt.webp",
       height: 42,
       width: 138,
       shouldInvert: false,
@@ -81,14 +81,14 @@ export function Hero() {
     },
     {
       alt: "Asian Paints",
-      src: "/logos/asian-paints.png",
+      src: "/logos/asian-paints-optimized.webp",
       height: 36,
       width: 140,
       shouldInvert: false,
     },
     {
       alt: "Rosa",
-      src: "/logos/rosa.png",
+      src: "/logos/rosa-optimized.webp",
       height: 36,
       width: 120,
       shouldInvert: false,
