@@ -225,6 +225,7 @@ function TestimonialImage({ t }: { t: Testimonial }) {
           fill
           sizes="(max-width: 768px) 100vw, 360px"
           className="object-cover pointer-events-none rounded-2xl"
+          loading="lazy"
           style={{
             objectPosition: t.id === 1 ? "center 40%" : t.id === 2 ? "center 20%" : "center center"
           }}

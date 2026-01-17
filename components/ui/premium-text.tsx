@@ -78,12 +78,11 @@ export function PremiumText({
         hidden: {
             opacity: 0,
             y: 20,
-            filter: "blur(10px)",
+            // Removed filter: blur() - causes forced reflows and blocks LCP
         },
         visible: {
             opacity: 1,
             y: 0,
-            filter: "blur(0px)",
             transition: {
                 duration: duration,
                 ease: [0.2, 0.65, 0.3, 0.9],

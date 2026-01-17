@@ -1,7 +1,6 @@
 "use client"
 // components/BeforeAfterResults.tsx
-import React, { useEffect, useRef } from "react"
-import gsap from "gsap"
+import React from "react"
 import { RevealText } from "@/components/common/reveal-text"
 import { SectionBadge } from "@/components/ui/section-badge"
 import { PremiumText } from "@/components/ui/premium-text"
@@ -158,6 +157,8 @@ export function BeforeAfterResults() {
                           width={56}
                           height={56}
                           className="h-14 w-14 rounded-full object-cover grayscale opacity-80"
+                          loading="lazy"
+                          sizes="56px"
                         />
                         <div>
                           <h3 className="text-lg font-bold text-white leading-tight">{cs.name}</h3>
@@ -196,34 +197,11 @@ export function BeforeAfterResults() {
 }
 
 function AfterCard({ cs }: { cs: CaseStudy }) {
-  const containerRef = useRef<HTMLDivElement | null>(null)
-
-  // Clean up unused refs/effects if we are simplifying, but keeping minimal hover effect
-  // GSAP Hover Effect
-  useEffect(() => {
-    const el = containerRef.current
-    if (!el) return
-
-    const onEnter = () => {
-      gsap.to(el, { y: -5, duration: 0.3, ease: "power2.out" })
-    }
-    const onLeave = () => {
-      gsap.to(el, { y: 0, duration: 0.3, ease: "power2.out" })
-    }
-
-    el.addEventListener("mouseenter", onEnter)
-    el.addEventListener("mouseleave", onLeave)
-
-    return () => {
-      el.removeEventListener("mouseenter", onEnter)
-      el.removeEventListener("mouseleave", onLeave)
-    }
-  }, [])
+  // Removed GSAP hover effect - using CSS transitions instead for better performance
 
   return (
     <div
-      ref={containerRef}
-      className={`relative flex flex-col h-full rounded-[32px] border border-[#facc15]/40 bg-black p-8 overflow-hidden group transition-all duration-500 hover:border-[#facc15]/60 hover:shadow-[0_0_50px_-12px_rgba(250,204,21,0.3)]`}
+      className={`relative flex flex-col h-full rounded-[32px] border border-[#facc15]/40 bg-black p-8 overflow-hidden group transition-all duration-300 hover:-translate-y-1 hover:border-[#facc15]/60 hover:shadow-[0_0_50px_-12px_rgba(250,204,21,0.3)] will-change-transform`}
     >
       {/* Shimmer/Shine Effect */}
       <div className="absolute inset-0 -translate-x-full animate-[shimmer_2.5s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent z-0 pointer-events-none" />
@@ -254,6 +232,8 @@ function AfterCard({ cs }: { cs: CaseStudy }) {
               width={56}
               height={56}
               className="h-14 w-14 rounded-full object-cover border-2 border-[#facc15]"
+              loading="lazy"
+              sizes="56px"
             />
           </div>
           <div>

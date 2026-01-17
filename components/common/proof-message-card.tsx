@@ -23,9 +23,11 @@ export function ProofMessageCard({
                     <Image
                         src={src}
                         alt="Client Result"
-                        width={600}
-                        height={900}
+                        width={400}
+                        height={600}
                         className="w-full h-auto object-cover opacity-90 transition-opacity group-hover:opacity-100"
+                        loading="lazy"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                     />
                 </div>
             </div>
