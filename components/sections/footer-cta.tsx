@@ -74,7 +74,7 @@ export function FooterCTA() {
         </Link>
 
         {/* Separator / Footer Links */}
-        <div className="mt-24 md:mt-32 w-full border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-white/40">
+        <div className="mt-24 md:mt-32 w-full border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-white/60">
           <div>© Shark Edge Media. All rights reserved.</div>
 
           <div className="flex gap-6 text-xl text-white/80">
@@ -84,6 +84,7 @@ export function FooterCTA() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`Follow us on ${social.icon === FaInstagram ? 'Instagram' : 'LinkedIn'}`}
                 className={`${social.className} transition-colors duration-300`}
               >
                 <social.icon />

@@ -284,6 +284,7 @@ export function Hero() {
                   alt={logo.alt}
                   width={logo.width}
                   height={logo.height}
+                  sizes={`${logo.width}px`}
                   className={`company-logo-img object-contain transition-all duration-300
                               ${logo.original ? 'opacity-100' : (logo.invert ? 'opacity-50' : (logo.shouldInvert ? 'opacity-50' : 'brightness-0 invert opacity-50'))}
                               hover:opacity-100`}
