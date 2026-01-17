@@ -196,6 +196,8 @@ body {
   opacity: 1 !important;
   filter: brightness(4.9) contrast(2.9) saturate(1.1);
   mix-blend-mode: normal !important;
+  will-change: opacity, filter, transform;
+  contain: layout style paint;
 }
 
 /* ---------- ORBIT ANIMATIONS (if used) ---------- */
@@ -255,6 +257,7 @@ body {
   .reels-track {
     width: max-content;
     animation: reels-scroll 45s linear infinite;
+    will-change: transform;
   }
 
   .reel-card {
@@ -360,6 +363,7 @@ body {
 
 .animate-reels {
   animation: reels-scroll 35s linear infinite;
+  will-change: transform;
 }
 
 /* ---------- CTA + CAL.COM EMBED (CLEAN) ---------- */

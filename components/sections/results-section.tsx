@@ -331,7 +331,8 @@ export function ResultsSection() {
                           alt={reel.title}
                           fill
                           className="absolute inset-0 h-full w-full object-cover z-0"
-                          unoptimized
+                          sizes="(max-width: 640px) 280px, 300px"
+                          loading="lazy"
                         />
                       </>
                     ) : (
@@ -340,7 +341,8 @@ export function ResultsSection() {
                         alt={reel.title}
                         fill
                         className="absolute inset-0 h-full w-full object-cover"
-                        unoptimized
+                        sizes="(max-width: 640px) 280px, 300px"
+                        loading="lazy"
                       />
                     )}
 

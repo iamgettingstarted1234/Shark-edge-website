@@ -1,0 +1,9 @@
+# Browsers that we support
+# Targets modern browsers to reduce polyfill bundle size
+# This eliminates polyfills for: Array.prototype.at, flat, flatMap,
+# Object.fromEntries, Object.hasOwn, String.prototype.trimEnd/trimStart
+
+defaults and fully supports es6-module
+not dead
+not ie 11
+not op_mini all

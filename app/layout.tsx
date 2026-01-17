@@ -15,11 +15,13 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-inter",
+  display: 'swap',
 })
 
 const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-manrope",
+  display: 'swap',
 })
 
 /* instrument serif italic */
@@ -27,12 +29,14 @@ const instrumentSerifItalic = localFont({
   src: "../public/fonts/instrument-italic.ttf",
   variable: "--font-instrument-italic",
   style: 'italic',
+  display: 'swap',
 })
 
 /* Inter local variable font */
 const interLocal = localFont({
   src: "../public/fonts/inter-variable.ttf",
   variable: "--font-inter-local",
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -242,10 +246,18 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* DNS Prefetch for 3rd party resources */}
+        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+        <link rel="dns-prefetch" href="https://images.pexels.com" />
+
+        {/* Preconnect for critical 3rd party origins */}
+        <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://images.pexels.com" crossOrigin="anonymous" />
+
         {/* Preload hero video for faster LCP */}
         <link rel="preload" href="/background/hero-bg.webm" as="video" type="video/webm" />
         {/* Preload critical fonts */}
-        <link rel="preload" href="/fonts/inter-variable.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/instrument-italic.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
       </head>
       <body
         className={`

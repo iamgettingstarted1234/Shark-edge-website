@@ -112,9 +112,10 @@ export function Hero() {
           loop
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"
+          poster="/background/hero-poster.webp"
           onCanPlay={(e) => {
             // Ensure video plays when ready
             const video = e.currentTarget;
@@ -248,12 +249,14 @@ export function Hero() {
           <div className="mt-14 flex flex-col items-center gap-4">
             <div className="flex -space-x-3">
               {faceImages.map((src, i) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
+                <NextImage
                   key={`face-${i}`}
                   src={src}
-                  alt="client"
+                  alt="Satisfied client"
+                  width={44}
+                  height={44}
                   className="h-11 w-11 rounded-full border-2 border-black object-cover"
+                  loading="lazy"
                 />
               ))}
             </div>
@@ -293,7 +296,8 @@ export function Hero() {
                     width: logo.width,
                     filter: logo.original ? "" : (logo.invert ? "invert(1)" : (logo.shouldInvert ? "brightness(0) invert(1)" : ""))
                   }}
-                  loading="lazy"
+                  loading={index < 3 ? "eager" : "lazy"}
+                  priority={index === 0}
                 />
               ))}
             </InfiniteScroll>

@@ -205,6 +205,7 @@ export function ProcessSection() {
                   fill
                   sizes="(min-width: 1024px) 45vw, 100vw"
                   className="object-cover transition-transform duration-500 will-change-transform group-hover:scale-[1.03]"
+                  loading="lazy"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
               </div>
