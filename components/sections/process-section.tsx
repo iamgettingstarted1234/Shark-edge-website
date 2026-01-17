@@ -153,7 +153,7 @@ export function ProcessSection() {
                   onMouseEnter={() => setActiveId(phase.id)}
                   className={`relative flex flex-col items-center justify-center rounded-3xl px-6 py-5 text-sm sm:text-base font-semibold transition-colors duration-300 cursor-pointer ${isActive
                     ? "text-black"
-                    : "text-white/55 hover:text-white"
+                    : "text-white/70 hover:text-white"
                     }`}
                 >
                   {isActive && (
@@ -211,7 +211,7 @@ export function ProcessSection() {
 
               {/* Text side */}
               <div className="space-y-4">
-                <div className="text-xs sm:text-sm font-medium tracking-[0.22em] uppercase text-white/55">
+                <div className="text-xs sm:text-sm font-medium tracking-[0.22em] uppercase text-white/70">
                   {activePhase.tag}
                 </div>
 
